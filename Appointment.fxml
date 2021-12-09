@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AppointmentController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="115.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="70.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="190.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="60.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="210.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="115.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="25.0" vgrow="SOMETIMES" />
+      <RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="80.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.columnSpan="3" GridPane.rowIndex="7">
+         <children>
+            <Label fx:id="labelError" focusTraversable="false" text="Please fill out all fields" textFill="RED">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="-10.0" />
+               </padding>
+            </Label>
+            <Label fx:id="labelTimeError" focusTraversable="false" text="End time must be after Start time" textFill="RED">
+               <padding>
+                  <Insets left="-40.0" />
+               </padding>
+            </Label>
+         </children>
+      </VBox>
+      <Label fx:id="labelTitle" style="-fx-font-weight: bold; -fx-font-size: 14;" text="Add Appointment" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+      <Label text="ID" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Label text="Title" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Label text="Description" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Label text="Location" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <Label text="Contact" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+      <Label text="Type" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+      <Label text="Start" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+      <Label text="End" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+      <Label text="Customer" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+      <Label text="User" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+      <TextField fx:id="textID" disable="true" promptText="Auto Generated - Disabled" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <TextField fx:id="textTitle" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <TextField fx:id="textDescription" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+      <TextField fx:id="textLocation" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+      <ComboBox fx:id="comboContact" prefHeight="25.0" prefWidth="194.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+      <TextField fx:id="textType" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="3">
+         <children>
+            <DatePicker fx:id="dateStart" editable="false" prefHeight="25.0" prefWidth="108.0" />
+            <ComboBox fx:id="comboStart" prefHeight="25.0" prefWidth="104.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="4">
+         <children>
+            <DatePicker fx:id="dateEnd" editable="false" prefHeight="25.0" prefWidth="118.0" />
+            <ComboBox fx:id="comboEnd" prefHeight="25.0" prefWidth="113.0" />
+         </children>
+      </HBox>
+      <ComboBox fx:id="comboCustomer" prefHeight="25.0" prefWidth="231.0" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+      <ComboBox fx:id="comboUser" prefHeight="25.0" prefWidth="235.0" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+      <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onSave" text="Save" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+      <Button alignment="CENTER" mnemonicParsing="false" onAction="#onCancel" text="Cancel" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+   </children>
+</GridPane>

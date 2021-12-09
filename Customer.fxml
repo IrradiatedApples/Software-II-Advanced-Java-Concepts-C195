@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.CustomerController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="250.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="75.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="394.0" minWidth="195.0" prefWidth="195.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="150.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="25.0" vgrow="SOMETIMES" />
+    <RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="60.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label fx:id="labelTitle" style="-fx-font-size: 14; -fx-font-weight: bold;" text="Add Customer" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+      <Label text="ID" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Label text="Name" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Label text="Address" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Label text="Postal Code" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <Label text="Division" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+      <Label text="Country" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+      <Label text="Phone #" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+      <TextField fx:id="textID" disable="true" promptText="Auto Generated - Disabled" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <TextField fx:id="textName" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <TextField fx:id="textAddress" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+      <TextField fx:id="textPostalCode" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+      <ComboBox fx:id="comboDivision" prefHeight="25.0" prefWidth="256.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+      <ComboBox fx:id="comboCountry" onAction="#onCountrySelected" prefHeight="25.0" prefWidth="231.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+      <TextField fx:id="textPhoneNum" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="9">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onSave" text="Save" />
+            <HBox prefHeight="50.0" prefWidth="98.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label fx:id="labelError" contentDisplay="TOP" focusTraversable="false" text="Please fill out all fields" textFill="RED">
+                     <HBox.margin>
+                        <Insets left="7.0" />
+                     </HBox.margin></Label>
+               </children></HBox>
+            <Button mnemonicParsing="false" onAction="#onCancel" text="Cancel" />
+         </children>
+      </HBox>
+   </children>
+</GridPane>

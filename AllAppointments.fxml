@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AllAppointmentsController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="15.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" prefWidth="626.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="15.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="15.0" vgrow="SOMETIMES" />
+    <RowConstraints prefHeight="353.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="15.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <GridPane style="-fx-border-color: black; -fx-border-radius: 20;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="567.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="284.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <TableView fx:id="tableAppointments" focusTraversable="false" prefHeight="274.0" prefWidth="866.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+              <columns>
+                  <TableColumn fx:id="colId" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="40.0" style="-fx-alignment: CENTER;" text="ID" />
+                  <TableColumn fx:id="colTitle" maxWidth="1.7976931348623157E308" prefWidth="77.0" style="-fx-alignment: CENTER;" text="Title" />
+                  <TableColumn fx:id="colDesc" maxWidth="1.7976931348623157E308" prefWidth="75.0" style="-fx-alignment: CENTER;" text="Description" />
+                <TableColumn fx:id="colLocation" maxWidth="1.7976931348623157E308" prefWidth="76.0" style="-fx-alignment: CENTER;" text="Location" />
+                <TableColumn fx:id="colContact" maxWidth="1.7976931348623157E308" minWidth="9.0" prefWidth="91.0" style="-fx-alignment: CENTER;" text="Contact" />
+                  <TableColumn fx:id="colType" maxWidth="1.7976931348623157E308" prefWidth="108.0" style="-fx-alignment: CENTER;" text="Type" />
+                  <TableColumn fx:id="colStart" maxWidth="1.7976931348623157E308" prefWidth="153.0" style="-fx-alignment: CENTER;" text="Start" />
+                  <TableColumn fx:id="colEnd" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="142.0" style="-fx-alignment: CENTER;" text="End" />
+                  <TableColumn fx:id="colCustomerID" maxWidth="1.7976931348623157E308" prefWidth="100.0" style="-fx-alignment: CENTER;" text="Customer ID" />
+                  <TableColumn fx:id="colUserId" maxWidth="1.7976931348623157E308" prefWidth="85.0" style="-fx-alignment: CENTER;" text="User ID" />
+              </columns>
+            </TableView>
+            <Button focusTraversable="false" mnemonicParsing="false" onAction="#toAddAppointment" text="Add" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button focusTraversable="false" mnemonicParsing="false" onAction="#toUpdateAppointment" text="Update" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button focusTraversable="false" mnemonicParsing="false" onAction="#onDelete" text="Delete" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="100" GridPane.columnIndex="1">
+               <children>
+                  <Label style="-fx-font-weight: bold;" text="Appointments">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="radioAll" focusTraversable="false" mnemonicParsing="false" onAction="#viewAll" text="All Appointments">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="toggleAppointments" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="radioMonth" focusTraversable="false" mnemonicParsing="false" onAction="#viewMonth" text="Appointments this Month" toggleGroup="$toggleAppointments" />
+                  <RadioButton fx:id="radioWeek" focusTraversable="false" mnemonicParsing="false" onAction="#viewWeek" text="Appointments this Week" toggleGroup="$toggleAppointments" />
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+   </children>
+</GridPane>
